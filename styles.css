@@ -16,7 +16,7 @@ body {
 .app {
   position: relative;
   overflow: hidden;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
 }
 
@@ -98,13 +98,28 @@ body {
 
 /* Start of code for the actual App */
 
+.app{
+    padding-block: 5vh;
+}
 h1 {
-    padding-top: 5vh;
   font-size: 4rem;
   text-align: center;
 }
 
-h2{
-    font-size: 1rem;
-    text-align: center;
+h2 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.notepad {
+  height: 100%;
+  margin-top: 100px;
+  margin-inline: 200px;
+  color: white;
+  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+  overflow-y: auto;
+  outline: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
