@@ -98,8 +98,8 @@ body {
 
 /* Start of code for the actual App */
 
-.app{
-    padding-block: 5vh;
+.app {
+  padding-block: 5vh;
 }
 h1 {
   font-size: 4rem;
@@ -112,14 +112,35 @@ h2 {
 }
 
 .notepad {
+  font-family: "Source Code Pro", monospace;
   height: 100%;
   margin-top: 100px;
-  margin-inline: 200px;
+  margin-inline: 10vw;
   color: white;
   font-size: 1rem;
-  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  line-height: 2;
   overflow-y: auto;
   outline: none;
   white-space: pre-wrap;
   word-wrap: break-word;
+  position: relative;
 }
+
+/* Notepad Placeholder */
+
+.notepad:empty::before {
+  content: "Type Something...";
+  color: rgb(255, 255, 255);
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.notepad:focus::before {
+  content: "";
+}
+
+/* Notepad Placeholder */
