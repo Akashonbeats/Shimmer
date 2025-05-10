@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const notepad = document.querySelector(".notepad");
 

@@ -141,9 +141,7 @@ h2 {
   pointer-events: none;
 }
 
-.notepad:focus::before {
-  content: "";
-}
+/* Removed .notepad:focus::before rule */
 
 /* Notepad Placeholder */
 
