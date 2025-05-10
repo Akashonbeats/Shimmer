@@ -53,6 +53,7 @@ body {
   background-color: #c158ff; /* Increased saturation */
   top: 5%;
   left: 10%;
+  animation: moveBlob1 25s infinite alternate ease-in-out;
 }
 
 .blob-2 {
@@ -145,3 +146,26 @@ h2 {
 }
 
 /* Notepad Placeholder */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-block: 7px;
+  text-align: center;
+  background-color: #1a1a1ac1;
+  backdrop-filter: blur(100px);
+  font-size: 0.7rem;
+  color: #adadad;
+  z-index: 100;
+}
+footer a {
+  color: #adadad;
+  margin-left: 7px;
+}
+footer a:hover {
+  color: rgb(244, 198, 255);
+}
+footer span {
+  color: rgb(255, 255, 138);
+}
