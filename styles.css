@@ -110,7 +110,7 @@ img {
   display: inline;
   height: 70px;
   transform: translateY(5px);
-  filter: brightness(4) drop-shadow(0 6px 8px rgba(255, 255, 167, 0.5));
+  filter: brightness(4) drop-shadow(0 4px 8px rgba(255, 255, 167, 0.5));
 }
 h1 {
   color: rgb(255, 255, 167);
@@ -131,8 +131,8 @@ h2 {
 .notepad {
   font-family: "Source Code Pro", monospace;
   font-style: normal;
-  height: 100%;
-  margin-top: 70px;
+  height: calc(100vh - 70px - 10px - 180px); 
+  margin-top: 50px;
   margin-inline: 10vw;
   padding-right: 12px; /* Padding to account for scrollbar */
   color: white;
@@ -144,6 +144,14 @@ h2 {
   white-space: pre-wrap;
   word-wrap: break-word;
   position: relative;
+  /* To make the end of the notepad div fade */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,2) 80%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,2) 80%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+   /* To make the end of the notepad div fade */
 }
 
 /* Notepad Placeholder */
