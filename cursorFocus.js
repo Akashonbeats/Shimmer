@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function placeCaretAtEnd(element) {
     if (!element.lastChild) {
-      element.appendChild(document.createTextNode(''));
+      element.appendChild(document.createTextNode(""));
     }
     const selection = window.getSelection();
     const range = document.createRange();

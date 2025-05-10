@@ -103,13 +103,12 @@ body {
 .app {
   padding-block: 5vh;
 }
-#symbol-name{
-  text-align: center;
+nav{
+  user-select: none;
 }
 img {
   display: inline;
   height: 70px;
-  filter: brightness(4);
   transform: translateY(5px);
   filter: brightness(4) drop-shadow(0 6px 8px rgba(255, 255, 167, 0.5));
 }
@@ -171,6 +170,7 @@ footer {
   font-size: 0.8rem;
   color: #adadad;
   z-index: 100;
+  user-select: none;
 }
 footer a {
   color: #adadad;
