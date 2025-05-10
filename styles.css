@@ -103,9 +103,25 @@ body {
 .app {
   padding-block: 5vh;
 }
+#symbol-name{
+  text-align: center;
+}
+img {
+  display: inline;
+  height: 70px;
+  filter: brightness(4);
+  transform: translateY(5px);
+  filter: brightness(4) drop-shadow(0 6px 10px rgba(255, 255, 167, 0.5));
+}
 h1 {
+  color: rgb(255, 255, 167);
   font-size: 4rem;
   text-align: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 h2 {
@@ -156,7 +172,7 @@ footer {
   text-align: center;
   background-color: #1a1a1ac1;
   backdrop-filter: blur(100px);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #adadad;
   z-index: 100;
 }
@@ -168,5 +184,5 @@ footer a:hover {
   color: rgb(244, 198, 255);
 }
 footer span {
-  color: rgb(255, 255, 138);
+  color: rgb(255, 255, 167);
 }
