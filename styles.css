@@ -42,42 +42,49 @@ body {
 .blob-5,
 .blob-6 {
   position: absolute;
-  width: 500px; /* Same size */
-  height: 500px; /* Same size */
   border-radius: 50%;
   filter: blur(80px); /* Same blur */
   opacity: 0.8;
 }
 
 .blob-1 {
-  background-color: #c158ff; /* Increased saturation */
+  width: 80vw;
+  height: 80vw;
+  background-color: #c258ff8a; /* Increased saturation */
   top: 5%;
   left: 10%;
-  animation: moveBlob1 25s infinite alternate ease-in-out;
 }
 
 .blob-2 {
-  background-color: #ff5733; /* Increased saturation */
-  top: 20%;
+  width: 60vw;
+  height: 60vw;
+  background-color: #6f00ff8a; /* Decreased Colorwheel Opacity*/
+  top: 0%;
   left: 40%;
 }
 
 .blob-3 {
-  background-color: #ff4d6d; /* Increased saturation */
+  width: 80vw;
+  height: 80vw;
+  background-color: #ff4d6e85; /* Decreased Colorwheel Opacity*/
   top: 50%;
   left: 5%;
 }
 
 .blob-4 {
-  background-color: #ff1744; /* Increased saturation */
+  width: 40vw;
+  height: 40vw;
+  background-color: #ff583385; /* Decreased Colorwheel Opacity*/
   top: 60%;
   left: 50%;
 }
 
 .blob-5 {
-  background-color: #ffb347; /* Increased saturation */
+  width: 50vw;
+  height: 50vw; 
+  background-color: #ff005580; /* Decreased Colorwheel Opacity*/
   top: 10%;
-  left: 70%;
+  left: 10%;
 }
 
 .frost-overlay {
@@ -106,15 +113,9 @@ body {
 nav {
   user-select: none;
 }
-img {
-  display: inline;
-  height: 70px;
-  transform: translateY(5px);
-  filter: brightness(4) drop-shadow(0 4px 8px rgba(255, 255, 167, 0.5));
-}
 h1 {
   color: rgb(255, 255, 167);
-  font-size: 4rem;
+  font-size: 3.3rem;
   text-align: center;
   text-align: center;
   display: flex;
@@ -124,7 +125,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
 }
 
@@ -133,13 +134,13 @@ h2 {
   font-style: normal;
   height: calc(100vh - 70px - 10px - 180px);
   margin-top: 50px;
-  margin-inline: 10vw;
+  margin-inline: 6vw;
   padding-right: 12px; /* Padding to account for scrollbar */
   padding-bottom: 100px;
   color: white;
   font-size: 1rem;
   font-optical-sizing: auto;
-  line-height: 2;
+  line-height: 1.4;
   overflow-y: auto;
   outline: none;
   white-space: pre-wrap;
@@ -179,11 +180,11 @@ h2 {
 
 .notepad::-webkit-scrollbar {
   background: transparent;
-  width: 7px;
+  width: 6px;
 }
 
 .notepad::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.514);
   border-radius: 10px;
   cursor: grab;
 }
@@ -193,7 +194,7 @@ h2 {
 }
 
 .notepad::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 249, 168, 0.678);
 }
 
 footer {
