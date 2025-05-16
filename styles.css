@@ -43,8 +43,13 @@ body {
 .blob-6 {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px); /* Same blur */
+  filter: blur(80px);
   opacity: 0.8;
+  
+  /* Start - Using Dummy Transform property to tap into GPU resulting in reduction of Color Banding*/
+  will-change: transform, background;
+  transform: translate3d(0, 0, 0);
+  /* End - Using Dummy Transform property to tap into GPU resulting in reduction of Color Banding*/
 }
 
 .blob-1 {
