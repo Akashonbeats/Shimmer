@@ -239,10 +239,12 @@ h2 {
   border-radius: 20px;
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease, padding-inline 0.3s ease;
 }
 
 .format-bar button:hover {
   background-color: #ffffff14;
+  padding-inline: 25px;
 }
 
 .format-bar button:active {
