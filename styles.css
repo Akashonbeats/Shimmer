@@ -209,6 +209,116 @@ h2 {
   background: rgba(255, 249, 168, 0.678);
 }
 
+/* Code for the Format Bar */
+
+.format-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  bottom: 40px;
+  padding: 10px;
+  background-color: #00000027;
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  border: 1px solid #ffffff27;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.format-bar button {
+  min-width: 40px;
+  height: 40px;
+  background-color: #2222221d;
+  backdrop-filter: blur(60px);
+  border: none;
+  color: #ffffff88;
+  padding: 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #ffffff27;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.format-bar button:hover {
+  background-color: #ffffff14;
+}
+
+.format-bar button:active {
+  background-color: #2222221d;
+}
+
+.bold{
+  font-weight: bold;
+}
+.bold::before{
+  content: "B";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+.bold:hover::before{
+  display: none;
+}
+.bold:hover::after{
+  content: "Bold";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+
+.italic{
+  font-style: italic;
+}
+.italic::before{
+  content: "I";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+.italic:hover::before{
+  display: none;
+}
+.italic:hover::after{
+  content: "Italic";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+
+.underline{
+  text-decoration: underline;
+}
+.underline::before{
+  content: "U";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+.underline:hover::before{
+  display: none;
+}
+.underline:hover::after{
+  content: "Underline";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+
+.strike{
+  text-decoration: line-through;
+}
+.strike::before{
+  content: "S";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+.strike:hover::before{
+  display: none;
+}
+.strike:hover::after{
+  content: "Strikethrough";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+
+/* Code for the Format Bar ends here*/
+
 footer {
   position: fixed;
   bottom: 0;
