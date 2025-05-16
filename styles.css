@@ -132,7 +132,7 @@ h2 {
 .notepad {
   font-family: "Source Code Pro", monospace;
   font-style: normal;
-  height: calc(100vh - 70px - 10px - 180px);
+  height: calc(100vh - 10px - 180px); /* Reduced 70px */
   margin-top: 50px;
   margin-inline: 6vw;
   padding-right: 12px; /* Padding to account for scrollbar */
