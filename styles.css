@@ -183,7 +183,11 @@ h2 {
 
 .notepad::-webkit-scrollbar {
   background: transparent;
-  width: 6px;
+  width: 0; /* Revert to 0 width */
+}
+
+.notepad:hover::-webkit-scrollbar {
+  width: 6px; /* Show scrollbar on hover */
 }
 
 .notepad::-webkit-scrollbar-thumb {
