@@ -40,13 +40,9 @@
 
     <!-- Actual Elements -->
     <div class="app">
-      <!-- <nav>
-        <h1> Shimmer</h1>
-        <h2>Your notes shine in here...</h2>
-      </nav> -->
-
       <div class="notepad" contenteditable="true"></div>
     </div>
+
     <div class="format-bar">
       <button class="bold" onclick="formatBold()"></button>
       <button class="italic" onclick="formatItalic()"></button>
@@ -57,7 +53,7 @@
     <div class="info-padding">
       <div class="info">
         <label class="hamburger">
-          <input type="checkbox" />
+          <input type="checkbox" id="infoCheckBox" />
           <svg viewBox="0 0 32 32">
             <path
               class="line line-top-bottom"
@@ -68,17 +64,17 @@
         </label>
       </div>
     </div>
+    <div class="about-page">
+      <h1>Shimmer</h1>
+      <h2>Your notes shine in here...</h2>
 
-    <!-- <footer>
-      <span>Shimmer</span> | Created by Akash Sampath.<a
-        href="https://akashonbeats.github.io/Personal-Website/"
-        >Visit Website</a
-      >
-    </footer> -->
+      <p>Developed by Akash Sampath | <a href="https://akashonbeats.github.io/Personal-Website/" target="_blank">Visit Website</a></p>
+    </div>
     <script src="formatStripper.js"></script>
     <script src="indexedDB.js"></script>
     <script src="notepadPlaceholder.js"></script>
     <script src="cursorFocus.js"></script>
     <script src="formatBarHandler.js"></script>
+    <script src="aboutPage.js"></script>
   </body>
 </html>
