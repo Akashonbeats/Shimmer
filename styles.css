@@ -389,16 +389,18 @@ body {
   z-index: 1000;
 }
 
-h1 {
+.about-page h1 {
   color: rgba(255, 255, 255, 0.925);
   font-size: 3.3rem;
   text-align: center;
+  animation: reveal 0.7s ease-in-out;
 }
 
-h2 {
+.about-page h2 {
   color: rgba(255, 255, 255, 0.548);
   font-size: 0.9rem;
   text-align: center;
+  animation: reveal 1.2s ease-in-out;
 }
 
 .about-page p{
