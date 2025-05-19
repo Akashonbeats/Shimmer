@@ -10,7 +10,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function() {
             console.log("Checkbox is checked");
             infoBox.style.opacity = "0";
             formatBar.style.opacity = "0";
-            aboutPage.style.display = "block";
+            aboutPage.style.display = "flex";
         };
         enabled();
     } else {
