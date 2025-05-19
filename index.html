@@ -45,10 +45,10 @@
       <div class="notepad" contenteditable="true"></div>
     </div>
     <div class="format-bar">
-      <button class="bold"></button>
-      <button class="italic"></button>
-      <button class="underline"></button>
-      <button class="strike"></button>
+      <button class="bold" onclick="formatBold()"></button>
+      <button class="italic" onclick="formatItalic()"></button>
+      <button class="underline" onclick="formatUnderline()"></button>
+      <button class="strike" onclick="formatStrike()"></button>
     </div>
     <footer>
       <span>Shimmer</span> | Created by Akash Sampath.<a
@@ -60,5 +60,6 @@
     <script src="indexedDB.js"></script>
     <script src="notepadPlaceholder.js"></script>
     <script src="cursorFocus.js"></script>
+    <script src="formatBarHandler.js"></script>
   </body>
 </html>
