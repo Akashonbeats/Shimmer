@@ -14,11 +14,12 @@ app.on('web-contents-created', (e, contents) => {
 })
 
 function createWindow() {
+  const isWindows = process.platform === 'win32'
   const win = new BrowserWindow({
-    width: 500,
-    height: 600,
-    minWidth: 500,
-    minHeight: 600,
+    width: isWindows ? 400 : 500,
+    height: isWindows ? 500 : 600,
+    minWidth: isWindows ? 400 : 500,
+    minHeight: isWindows ? 500 : 600,
     show: false,
     frame: false, // Always frameless
     titleBarStyle: 'hidden', // Hide native title bar, show overlay
@@ -38,7 +39,13 @@ function createWindow() {
   })
 
   win.loadFile(path.join(__dirname, 'index.html'))
-  win.once('ready-to-show', () => win.show())
+  win.once('ready-to-show', () => {
+    // Set zoom to 90% on Windows
+    if (process.platform === 'win32') {
+      win.webContents.setZoomFactor(0.8)
+    }
+    win.show()
+  })
 
   win.removeMenu()      // strip out the default menu bar
 }

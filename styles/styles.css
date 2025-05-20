@@ -189,11 +189,13 @@ body {
 
 .notepad::-webkit-scrollbar {
   background: transparent;
-  width: 0; /* Revert to 0 width */
+  width: 6px;
+  /* opacity: 0; */
 }
 
 .notepad:hover::-webkit-scrollbar {
   width: 6px; /* Show scrollbar on hover */
+  opacity: 1;
 }
 
 .notepad::-webkit-scrollbar-thumb {
