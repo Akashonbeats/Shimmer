@@ -1,0 +1,46 @@
+{
+  "name": "shimmer",
+  "version": "1.0.0",
+  "description": "A minimalistic notepad app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "icon:gen": "iconutil -c icns Icon.iconset --output rounded_icon.icns"
+  },
+  "devDependencies": {
+    "electron": "^25.2.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "com.akashsampath.shimmer",
+    "asar": true,
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "rounded_icon.icns"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "rounded_icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "dmg": {
+      "icon": "rounded_icon.icns",
+      "iconSize": 800
+    }
+  }
+}
