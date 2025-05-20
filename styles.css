@@ -393,8 +393,10 @@ body {
 }
 
 .about-page h1 {
+  font-family: Heading Now;
+  font-style: normal;
   color: rgba(255, 255, 255, 0.925);
-  font-size: 3.3rem;
+  font-size: 5rem;
   animation: reveal 0.7s ease-in-out;
 }
 
