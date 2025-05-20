@@ -122,19 +122,20 @@ body {
   height: calc(100vh - 100px);
   margin-top: 3.8vh;
   margin-inline: 6vw;
-  padding-right: 22px; /* Padding to account for scrollbar */
+  padding-right: 0; /* Removed extra right padding */
   padding-bottom: 150px;
   padding-top: 15px;
   color: white;
   font-size: 0.9rem;
   font-optical-sizing: auto;
   line-height: 1.4;
-  overflow-y: auto;
+  overflow-y: scroll; /* Always reserve space for scrollbar */
   outline: none;
   white-space: pre-wrap;
   word-wrap: break-word;
   position: relative;
   border-top: #adadad78 2px dashed;
+  scrollbar-gutter: stable;
   /* To make the end of the notepad div fade */
   -webkit-mask-image: linear-gradient(
     to bottom,
