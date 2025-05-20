@@ -35,21 +35,14 @@ function sanitizeHTML(html) {
 // Start - paste event listener
 document.querySelector(".notepad").addEventListener("paste", (event) => {
   event.preventDefault();
-  let clipboardHtml = (event.clipboardData || window.clipboardData).getData("text/html");
-  if (!clipboardHtml) {
-    clipboardHtml = (event.clipboardData || window.clipboardData).getData("text/plain");
-    const selection = window.getSelection();
-    if (!selection.rangeCount) return;
-    selection.deleteFromDocument();
-    selection.getRangeAt(0).insertNode(document.createTextNode(clipboardHtml));
+  const cp = event.clipboardData || window.clipboardData;
+  let html = cp.getData("text/html");
+  if (html) {
+    html = sanitizeHTML(html);
+    document.execCommand("insertHTML", false, html);
   } else {
-    clipboardHtml = sanitizeHTML(clipboardHtml);
-    const selection = window.getSelection();
-    if (!selection.rangeCount) return;
-    selection.deleteFromDocument();
-    const range = selection.getRangeAt(0);
-    const fragment = range.createContextualFragment(clipboardHtml);
-    range.insertNode(fragment);
+    const txt = cp.getData("text/plain");
+    document.execCommand("insertText", false, txt);
   }
 });
 // End - paste event listener
