@@ -14,6 +14,19 @@ body {
   font-weight: 500;
   color: white;
 }
+
+.drag-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 32px; /* Adjust to match your titleBarOverlay height */
+  -webkit-app-region: drag;
+  background: transparent;
+  z-index: 10000; /* Ensure it's above other elements */
+  pointer-events: auto;
+}
+
 .app {
   position: relative;
   overflow: hidden;

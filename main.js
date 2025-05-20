@@ -15,15 +15,17 @@ app.on('web-contents-created', (e, contents) => {
 
 function createWindow() {
   const win = new BrowserWindow({
-    // change opening size to something like 800×600
     width: 500,
     height: 600,
-    // enforce minimum dimensions if desired
     minWidth: 500,
     minHeight: 600,
     show: false,
-    frame: false,
-    titleBarStyle: 'hidden', // <-- optional on macOS for a cleaner look
+    frame: false, // Always frameless
+    titleBarStyle: 'hidden', // Hide native title bar, show overlay
+    titleBarOverlay: {
+      color: 'rgba(0,0,0,0)',   // Fully transparent background for the overlay
+      symbolColor: '#ffffff88'        // (Optional) Color for the button icons
+    },
     icon: path.join(
       __dirname,
       process.platform === 'darwin' ? 'rounded_icon.icns' : 'rounded_icon.ico'
