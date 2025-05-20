@@ -26,7 +26,7 @@ function createWindow() {
     titleBarStyle: 'hidden', // <-- optional on macOS for a cleaner look
     icon: path.join(
       __dirname,
-      process.platform === 'darwin' ? 'package_logo.icns' : 'package_logo.ico'
+      process.platform === 'darwin' ? 'rounded_icon.icns' : 'rounded_icon.ico'
     ),
     webPreferences: {
       nodeIntegration: true,
