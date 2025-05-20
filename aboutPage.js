@@ -22,5 +22,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function() {
         formatBar.style.display = "block";
         aboutPage.style.display = "none";
         screenSaver.style.display = "none";
+        document.getElementById("screensaverCheckBox").checked = false;
+        document.getElementById("screensaverCheckBox").dispatchEvent(new Event("change"));
     }
 });
