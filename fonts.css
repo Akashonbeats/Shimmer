@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Heading Now Slim"; /* Added another Heading Now font below with slightly different style. This one doesn't have numbers and this is the one that is used for the App Title */
-  src: url("./Heading-Now-Trial-37-Extrabold.ttf.woff") format("woff");
+  src: url("./fonts/Heading-Now-Trial-37-Extrabold.ttf.woff") format("woff");
 }
 
 @font-face {
   font-family: "Heading Now I"; /* This is the font used for Date & Time */
-  src: url("./Heading Now Italic.ttf") format("truetype");
+  src: url("./fonts/Heading Now Italic.ttf") format("truetype");
 }

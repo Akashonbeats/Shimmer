@@ -125,6 +125,21 @@
   }
 }
 
+@keyframes reveal2 {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  80%{
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+
+  }
+}
+
 @keyframes slideUp {
   0% {
     transform: translateY(100%);
@@ -136,9 +151,9 @@
 
 @keyframes screenSaverUp{
   0% {
-    transform: translateY(80px);
+    transform: translateY(80px) rotate(180deg);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
   }
 }
