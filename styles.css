@@ -206,6 +206,7 @@ body {
   border-radius: 30px;
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: slideUp 1s cubic-bezier(0.25, 1.25, 0.5, 1);
 }
 
 .format-bar button {

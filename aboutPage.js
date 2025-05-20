@@ -1,5 +1,5 @@
 document.getElementById("infoCheckBox").addEventListener("change", function() {
-    const infoBox = document.querySelector(".app");
+    const app = document.querySelector(".app");
     const formatBar = document.querySelector(".format-bar");
     const aboutPage = document.querySelector(".about-page");
 
@@ -8,16 +8,16 @@ document.getElementById("infoCheckBox").addEventListener("change", function() {
         // Function to execute when checkbox is checked
         const enabled = () => {
             console.log("Checkbox is checked");
-            infoBox.style.opacity = "0";
-            formatBar.style.opacity = "0";
+            app.style.display = "none";
+            formatBar.style.display = "none";
             aboutPage.style.display = "flex";
         };
         enabled();
     } else {
         // Function to execute when checkbox is unchecked
         console.log("Checkbox is unchecked");
-        infoBox.style.opacity = "1";
-        formatBar.style.opacity = "1";
+        app.style.display = "block";
+        formatBar.style.display = "block";
         aboutPage.style.display = "none";
     }
 });
