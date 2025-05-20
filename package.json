@@ -7,6 +7,7 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
     "icon:gen": "iconutil -c icns Icon.iconset --output rounded_icon.icns"
   },
   "devDependencies": {
@@ -24,13 +25,22 @@
     },
     "mac": {
       "target": [
-        "dmg"
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
       ],
-      "icon": "rounded_icon.icns"
+      "icon": "rounded_icon.icns",
+      "extendInfo": {
+        "CFBundleSupportedPlatforms": ["MacOSX"]
+      }
     },
     "win": {
       "target": [
-        "nsis"
+        {
+          "target": "nsis",
+          "arch": ["ia32", "arm64"]
+        }
       ],
       "icon": "rounded_icon.ico"
     },
