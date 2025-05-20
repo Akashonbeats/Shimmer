@@ -51,6 +51,8 @@
     },
     "dmg": {
       "icon": "rounded_icon.icns"
-    }
+    },
+    "publisherName": "Akash Sampath",
+    "copyright": "Copyright © 2025 Akash Sampath"
   }
 }
