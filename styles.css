@@ -119,11 +119,11 @@ body {
 .notepad {
   font-family: "Source Code Pro", monospace;
   font-style: normal;
-  height: calc(100vh - 170px);
+  height: calc(100vh - 100px);
   margin-top: 3.8vh;
   margin-inline: 6vw;
-  padding-right: 12px; /* Padding to account for scrollbar */
-  padding-bottom: 100px;
+  padding-right: 22px; /* Padding to account for scrollbar */
+  padding-bottom: 150px;
   padding-top: 15px;
   color: white;
   font-size: 0.9rem;
@@ -151,6 +151,11 @@ body {
   -webkit-mask-size: cover;
   mask-size: cover;
   /* To make the end of the notepad div fade */
+}
+
+.notepad ul {
+  list-style: disc;
+  margin-left: 1.5em;
 }
 
 /* Notepad Placeholder */
@@ -298,6 +303,24 @@ body {
 }
 .strike:hover::after {
   content: "Strikethrough";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+
+.bullet {
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+.bullet::before {
+  content: "•";
+  font-size: 0.8rem;
+  color: #ffffff88;
+}
+.bullet:hover::before {
+  display: none;
+}
+.bullet:hover::after {
+  content: "Bullet";
   font-size: 0.8rem;
   color: #ffffff88;
 }
