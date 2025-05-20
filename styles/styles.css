@@ -139,7 +139,7 @@ body {
   padding-bottom: 150px;
   padding-top: 15px;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-optical-sizing: auto;
   line-height: 1.4;
   overflow-y: scroll; /* Always reserve space for scrollbar */
@@ -318,7 +318,7 @@ body {
   display: none;
 }
 .strike:hover::after {
-  content: "Strikethrough";
+  content: "Strike";
   font-size: 0.8rem;
   color: #ffffff88;
 }
