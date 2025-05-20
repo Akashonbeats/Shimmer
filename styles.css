@@ -119,7 +119,7 @@ body {
 .notepad {
   font-family: "Source Code Pro", monospace;
   font-style: normal;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 120px);
   margin-top: 3.8vh;
   margin-inline: 6vw;
   padding-right: 0; /* Removed extra right padding */
