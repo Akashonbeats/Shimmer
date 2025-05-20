@@ -2,6 +2,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function() {
     const app = document.querySelector(".app");
     const formatBar = document.querySelector(".format-bar");
     const aboutPage = document.querySelector(".about-page");
+    const screenSaver = document.querySelector(".screensaver");
 
 
     if (this.checked) {
@@ -11,6 +12,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function() {
             app.style.display = "none";
             formatBar.style.display = "none";
             aboutPage.style.display = "flex";
+            screenSaver.style.display = "block";
         };
         enabled();
     } else {
@@ -19,5 +21,6 @@ document.getElementById("infoCheckBox").addEventListener("change", function() {
         app.style.display = "block";
         formatBar.style.display = "block";
         aboutPage.style.display = "none";
+        screenSaver.style.display = "none";
     }
 });

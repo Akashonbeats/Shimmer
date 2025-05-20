@@ -133,3 +133,12 @@
     transform: translateY(0);
   }
 }
+
+@keyframes screenSaverUp{
+  0% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
