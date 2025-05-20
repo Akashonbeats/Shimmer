@@ -1,7 +1,7 @@
 document.getElementById("screensaverCheckBox").addEventListener("change", function() {
-const appTitle = document.getElementById("appTitle");
-const appTagline = document.getElementById("appTagline");
-const websiteLink = document.getElementById("websiteLink");
+    const appTitle = document.getElementById("appTitle");
+    const appTagline = document.getElementById("appTagline");
+    const websiteLink = document.getElementById("websiteLink");
     const screensaverOverlay = document.querySelector(".screensaver-overlay");
 
     if (this.checked) {
@@ -12,6 +12,16 @@ const websiteLink = document.getElementById("websiteLink");
             appTagline.style.display = "none";
             websiteLink.style.display = "none";
             screensaverOverlay.style.display = "flex";
+
+            // Go fullscreen
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            }
+
+            // Keep screen on
+            if ('wakeLock' in navigator) {
+                navigator.wakeLock.request('screen').catch(err => console.error(err));
+            }
         };
         enabled();
     } else {
@@ -21,5 +31,10 @@ const websiteLink = document.getElementById("websiteLink");
         appTagline.style.display = "block";
         websiteLink.style.display = "block";
         screensaverOverlay.style.display = "none";
+
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
     }
 });
