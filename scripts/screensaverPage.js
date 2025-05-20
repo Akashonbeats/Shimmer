@@ -18,10 +18,12 @@ document.getElementById("screensaverCheckBox").addEventListener("change", functi
                 document.documentElement.requestFullscreen();
             }
 
-            // Keep screen on
-            if ('wakeLock' in navigator) {
-                navigator.wakeLock.request('screen').catch(err => console.error(err));
-            }
+        // ... acquire wake lock as before ...
+        if ('wakeLock' in navigator) {
+            navigator.wakeLock.request('screen').then(lock => {
+            window.myWakeLock = lock;
+            }).catch(err => console.error(err));
+        }
         };
         enabled();
     } else {
@@ -32,9 +34,16 @@ document.getElementById("screensaverCheckBox").addEventListener("change", functi
         websiteLink.style.display = "block";
         screensaverOverlay.style.display = "none";
 
-        // Exit fullscreen
+        // Disable fullscreen
         if (document.exitFullscreen) {
             document.exitFullscreen();
         }
+  
+        // Release wake lock if available
+        if (window.myWakeLock) {
+            window.myWakeLock.release().then(() => {
+            window.myWakeLock = null;
+        });
+    }
     }
 });
