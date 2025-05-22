@@ -13,7 +13,8 @@ window.clockModule = (() => {
     const ampm = hours >= 12 ? "PM" : "AM";
     hours = hours % 12 || 12;
 
-    timeElem.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+    // Format time with smaller AM/PM at the same level as the time
+    timeElem.innerHTML = `${hours}:${minutes}:${seconds}<span style="font-size:0.5em; vertical-align:down; position:relative;">${ampm}</span>`;
 
     const dayOfWeek = now.toLocaleString("en-US", { weekday: "long" });
     const day = now.getDate();
