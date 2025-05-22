@@ -451,7 +451,7 @@ body {
   margin-top: 15px;
   font-family: "Source Code Pro", monospace;
   color: rgba(255, 255, 255, 0.548);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   animation: reveal 1.2s ease-in-out;
   will-change: transform; 
   transform: translateZ(0);
@@ -463,11 +463,13 @@ body {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.719);
   margin-top: 60px;
-  padding: 16px;
-  padding-right: 10px;
-  padding-top: 14px;
-  background-color: #0000001c;
-  border-radius: 18px;
+  padding: 18px;
+  padding-bottom: 15.5px;
+  padding-right: 5px;
+  background-color: #2222221d;
+  backdrop-filter: blur(60px);
+  line-height: 1;
+  border-radius: 16px;
   border: 1px solid #ffffff1a;
 }
 
@@ -475,11 +477,12 @@ body {
   color: rgba(255, 255, 255, 0.747);
   text-decoration: none;
   margin-top: 20px;
-  margin-left: 7px;
+  margin-left: 5px;
   padding: 8px;
-  background-color: #00000027;
+  background-color: #22222223;
+  backdrop-filter: blur(60px);
   border-radius: 9px;
-  font-size: 0.75rem;
+line-height: 1;
   border: 1px solid #ffffff1a;
 }
 
