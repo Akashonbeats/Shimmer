@@ -7,3 +7,13 @@
   font-family: "Heading Now I"; /* This is the font used for Date & Time */
   src: url("./fonts/Heading Now Italic.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Source Code Pro", monospace; /* This is the font used for Notepad text*/
+  src: url("./fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter", sans-serif; /* This is the font used for overall app */
+  src: url("./fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+}

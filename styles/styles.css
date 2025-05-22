@@ -9,11 +9,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Playfair Display", serif;
   background-color: #0f0e0f;
   font-style: italic;
   font-weight: 500;
   color: white;
+
 }
 
 .drag-bar {
@@ -150,6 +150,9 @@ body {
   position: relative;
   border-top: #adadad78 2px dashed;
   scrollbar-gutter: stable;
+  will-change: transform; 
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
   /* To make the end of the notepad div fade */
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -438,17 +441,23 @@ body {
   color: rgba(255, 255, 255, 0.925);
   font-size: 5rem;
   animation: reveal 0.7s ease-in-out;
+  will-change: transform; 
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 .about-page h2 {
   color: rgba(255, 255, 255, 0.548);
   font-size: 1rem;
   animation: reveal 1.2s ease-in-out;
+  will-change: transform; 
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 .about-page p {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.747);
+  color: rgba(255, 255, 255, 0.719);
   margin-top: 60px;
 }
 
@@ -457,9 +466,9 @@ body {
   text-decoration: none;
   margin-top: 20px;
   margin-left: 7px;
-  padding: 7px;
+  padding: 8px;
   background-color: #00000027;
-  border-radius: 7px;
+  border-radius: 8px;
   font-size: 0.75rem;
 }
 
@@ -550,7 +559,10 @@ body {
   color: rgba(255, 255, 255, 0.747);
   font-size: 20vh;
   line-height: 1;
-  animation: reveal2 0.6s ease-in-out
+  animation: reveal2 0.6s ease-in-out;
+  will-change: transform; 
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 #date{
@@ -560,6 +572,9 @@ body {
   color: rgba(255, 255, 255, 0.548);
   font-size: 5vh;
   animation: reveal2 1.1s ease-in-out;
+  will-change: transform; 
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Code for Screensaver ends here */

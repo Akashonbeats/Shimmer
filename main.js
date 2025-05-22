@@ -60,7 +60,11 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      devTools: false    // completely disable DevTools
+      devTools: false,    // completely disable DevTools
+      backgroundThrottling: false,  // Prevent background throttling
+      enableWebSQL: false,          // Disable WebSQL
+      spellcheck: false,            // Disable spellcheck if not needed
+      offscreen: false              // Ensure not using offscreen rendering
     }
   })
 
@@ -75,6 +79,9 @@ function createWindow() {
 
   win.removeMenu()      // strip out the default menu bar
 }
+
+// Add this to reduce IPC overhead
+app.allowRendererProcessReuse = true;
 
 app.whenReady().then(createWindow)
 

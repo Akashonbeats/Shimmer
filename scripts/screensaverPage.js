@@ -12,6 +12,9 @@ document.getElementById("screensaverCheckBox").addEventListener("change", functi
             appTagline.style.display = "none";
             websiteLink.style.display = "none";
             screensaverOverlay.style.display = "flex";
+            
+            // Start the clock
+            window.clockModule.start();
 
             // Go fullscreen
             if (document.documentElement.requestFullscreen) {
@@ -33,6 +36,9 @@ document.getElementById("screensaverCheckBox").addEventListener("change", functi
         appTagline.style.display = "block";
         websiteLink.style.display = "block";
         screensaverOverlay.style.display = "none";
+        
+        // Stop the clock
+        window.clockModule.stop();
 
         // Disable fullscreen
         if (document.exitFullscreen) {
