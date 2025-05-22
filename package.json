@@ -11,8 +11,10 @@
     "dist": "electron-builder",
     "dist:win": "electron-builder --win"
   },
+  "author": "Akash Sampath",
   "devDependencies": {
-    "electron-builder": "^23.6.0"
+    "electron-builder": "^23.6.0",
+    "electron": "^25.2.0"
   },
   "build": {
     "appId": "com.akashsampath.shimmer",
@@ -63,6 +65,5 @@
     "copyright": "Copyright © 2025 Akash Sampath"
   },
   "dependencies": {
-    "electron": "^25.2.0"
   }
 }
