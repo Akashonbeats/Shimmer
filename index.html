@@ -111,7 +111,12 @@
     <!-- Scripts -->
 
     <script src="scripts/formatStripper.js"></script>
-    <script src="scripts/indexedDB.js"></script>
+    <script src="scripts/notepadHandler.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        require("electron").ipcRenderer; // Ensure Electron IPC is available
+      });
+    </script>
     <script src="scripts/notepadPlaceholder.js"></script>
     <script src="scripts/cursorFocus.js"></script>
     <script src="scripts/formatBarHandler.js"></script>

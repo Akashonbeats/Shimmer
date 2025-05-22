@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
+const fs = require('fs')
 const path = require('path')
 
 // Disable any Chromium command-line flags for DevTools early
@@ -11,6 +12,31 @@ app.on('web-contents-created', (e, contents) => {
       event.preventDefault()
     }
   })
+})
+
+// File path for saving the notepad content
+const filePath = path.join(app.getPath('userData'), 'notepadContent.txt')
+
+// IPC handler to read the file
+ipcMain.handle('read-file', async () => {
+  try {
+    if (fs.existsSync(filePath)) {
+      return fs.readFileSync(filePath, 'utf-8')
+    }
+    return ''
+  } catch (error) {
+    console.error('Error reading file:', error)
+    return ''
+  }
+})
+
+// IPC handler to save the file
+ipcMain.on('save-file', (event, content) => {
+  try {
+    fs.writeFileSync(filePath, content, 'utf-8')
+  } catch (error) {
+    console.error('Error saving file:', error)
+  }
 })
 
 function createWindow() {
