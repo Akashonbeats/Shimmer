@@ -35,7 +35,7 @@
           ]
         }
       ],
-      "icon": "rounded_icon.icns",
+      "icon": "Shimmer.icns",
       "extendInfo": {
         "CFBundleSupportedPlatforms": [
           "MacOSX"
@@ -52,7 +52,7 @@
           ]
         }
       ],
-      "icon": "rounded_icon.ico"
+      "icon": "shimmer_icon_256x256.ico"
     },
     "nsis": {
       "oneClick": false,
