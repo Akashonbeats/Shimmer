@@ -30,13 +30,20 @@ ipcMain.handle('read-file', async () => {
   }
 })
 
-// IPC handler to save the file
+// Optimize the save operation with throttling
+let saveTimeout = null
 ipcMain.on('save-file', (event, content) => {
-  try {
-    fs.writeFileSync(filePath, content, 'utf-8')
-  } catch (error) {
-    console.error('Error saving file:', error)
-  }
+  // Clear any pending saves
+  if (saveTimeout) clearTimeout(saveTimeout)
+  
+  // Debounce save operations to reduce disk I/O
+  saveTimeout = setTimeout(() => {
+    try {
+      fs.writeFileSync(filePath, content, 'utf-8')
+    } catch (error) {
+      console.error('Error saving file:', error)
+    }
+  }, 500) // Wait 500ms before saving
 })
 
 function createWindow() {
@@ -61,7 +68,7 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
       devTools: false,    // completely disable DevTools
-      backgroundThrottling: false,  // Prevent background throttling
+      backgroundThrottling: true,  // Enable throttling when app is in background
       enableWebSQL: false,          // Disable WebSQL
       spellcheck: false,            // Disable spellcheck if not needed
       offscreen: false              // Ensure not using offscreen rendering
@@ -78,6 +85,17 @@ function createWindow() {
   })
 
   win.removeMenu()      // strip out the default menu bar
+
+  // Add these event listeners to reduce CPU usage when window is not focused
+  win.on('blur', () => {
+    // Reduce update frequency when app loses focus
+    win.webContents.setFrameRate(10) // Lower framerate when unfocused
+  })
+
+  win.on('focus', () => {
+    // Restore normal update frequency when app gains focus
+    win.webContents.setFrameRate(60) // Normal framerate when focused
+  })
 }
 
 // Add this to reduce IPC overhead

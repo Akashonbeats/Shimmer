@@ -1,31 +1,44 @@
 {
   "name": "shimmer",
   "productName": "Shimmer",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Shimmer, A note-taking app built for design enthusiasts",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "alt-start": "npx electron@25.2.0 .",
-    "reinstall": "rm -rf node_modules && npm install",
+    "pack": "electron-builder --dir",
     "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac",
     "dist:win": "electron-builder --win"
   },
   "author": "Akash Sampath",
+  "license": "MIT",
   "devDependencies": {
-    "electron-builder": "^23.6.0",
-    "electron": "^25.2.0"
+    "electron": "^25.2.0",
+    "electron-builder": "^23.6.0"
   },
   "build": {
     "appId": "com.akashsampath.shimmer",
+    "productName": "Shimmer",
     "asar": true,
+    "asarUnpack": [],
     "files": [
-      "**/*"
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
     ],
-    "directories": {
-      "output": "dist"
-    },
+    "compression": "maximum",
     "mac": {
+      "category": "public.app-category.productivity",
       "target": [
         {
           "target": "dmg",
@@ -40,7 +53,10 @@
         "CFBundleSupportedPlatforms": [
           "MacOSX"
         ]
-      }
+      },
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "darkModeSupport": true
     },
     "win": {
       "target": [
@@ -53,17 +69,6 @@
         }
       ],
       "icon": "shimmer_icon_256x256.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": false,
-      "allowToChangeInstallationDirectory": true
-    },
-    "dmg": {
-      "icon": "rounded_icon.icns"
-    },
-    "copyright": "Copyright © 2025 Akash Sampath"
-  },
-  "dependencies": {
+    }
   }
 }
