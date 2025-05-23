@@ -148,6 +148,7 @@ body {
   will-change: transform; 
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
+  cursor: text; /* Set cursor to text for the editable area */
   /* To make the end of the notepad div fade */
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -189,27 +190,15 @@ body {
 .notepad::-webkit-scrollbar {
   background: transparent;
   width: 6px;
-  /* opacity: 0; */
 }
 
-.notepad:hover::-webkit-scrollbar {
-  width: 6px; /* Show scrollbar on hover */
-  opacity: 1;
-}
+
 
 .notepad::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.514);
+  background: rgba(0, 0, 0, 0.343);
   border-radius: 10px;
-  cursor: grab;
 }
 
-.notepad::-webkit-scrollbar-thumb:active {
-  cursor: grabbing;
-}
-
-.notepad::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 249, 168, 0.678);
-}
 
 /* Code for the Format Bar */
 
