@@ -80,7 +80,7 @@ if (!gotTheLock) {
       },
       icon: path.join(
         __dirname,
-        process.platform === 'darwin' ? 'rounded_icon.icns' : 'rounded_icon.ico'
+        process.platform === 'darwin' ? 'Shimmer.icns' : 'shimmer_icon_256x256.ico'
       ),
       webPreferences: {
         nodeIntegration: true,
