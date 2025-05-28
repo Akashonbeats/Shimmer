@@ -8,7 +8,7 @@ Shimmer - a Notepad Reimagined for Design Enthusiasts.
 
 ## Binaries Available
 
-Refer this repository's packages page to download the below listed packages.
+Refer this repository's Releases page to download the below listed packages.
 
 - macOS ARM x64 (Apple Silicon)
 - macOS x86 x64 (Intel)
