@@ -15,9 +15,6 @@ document
         websiteLink.style.display = "none";
         screensaverOverlay.style.display = "flex";
 
-        // Start the clock
-        window.clockModule.start();
-
         // Go fullscreen
         if (document.documentElement.requestFullscreen) {
           document.documentElement.requestFullscreen();
@@ -41,14 +38,6 @@ document
       appTagline.style.display = "block";
       websiteLink.style.display = "block";
       screensaverOverlay.style.display = "none";
-
-      // Stop the clock
-      window.clockModule.stop();
-
-      // Stop music updates
-      if (window.musicModule) {
-        window.musicModule.stop();
-      }
 
       // Disable fullscreen
       if (document.exitFullscreen) {

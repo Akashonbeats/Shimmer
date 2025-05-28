@@ -1,5 +1,5 @@
 // Only create the music module on macOS
-if (require('os').platform() === 'darwin') {
+if (require("os").platform() === "darwin") {
   window.musicModule = (() => {
     const { ipcRenderer } = require("electron");
     let updateInterval = null;
@@ -13,7 +13,7 @@ if (require('os').platform() === 'darwin') {
         if (info.title && info.artist) {
           songElement.innerHTML = "<span>Now Playing -</span> " + info.title;
           artistElement.innerHTML = "<span>By </span> " + info.artist;
-          songInfoDiv.style.display = "block";
+          songInfoDiv.style.display = "grid";
         } else {
           songInfoDiv.style.display = "none";
         }
@@ -30,6 +30,10 @@ if (require('os').platform() === 'darwin') {
           clearInterval(updateInterval);
           updateInterval = null;
         }
+
+        // Stop the clock
+        window.clockModule.stop();
+
         // Hide music info when stopped
         const songInfoDiv = document.getElementById("songInfo");
         if (songInfoDiv) songInfoDiv.style.display = "none";
