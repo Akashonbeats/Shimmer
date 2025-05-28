@@ -35,6 +35,9 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
       window.musicModule.stop();
     }
 
+    // Stop the clock
+    window.clockModule.stop();
+
     document.getElementById("screensaverCheckBox").checked = false;
     document
       .getElementById("screensaverCheckBox")
