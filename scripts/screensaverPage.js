@@ -18,11 +18,6 @@ document
         // Start the clock
         window.clockModule.start();
 
-        // Start music updates
-        if (window.musicModule) {
-          window.musicModule.start();
-        }
-
         // Go fullscreen
         if (document.documentElement.requestFullscreen) {
           document.documentElement.requestFullscreen();
