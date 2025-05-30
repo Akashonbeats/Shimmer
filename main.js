@@ -80,6 +80,16 @@ if (!gotTheLock) {
             set processList to (name of every process)
           end tell
 
+          if processList contains "Spotify" then
+            tell application "Spotify"
+              if player state is playing then
+                set trackName to name of current track
+                set artistName to artist of current track
+                return trackName & ";;;" & artistName
+              end if
+            end tell
+          end if
+
           if processList contains "Music" then
             tell application "Music"
               if player state is playing then
