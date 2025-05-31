@@ -231,7 +231,7 @@ body {
   border-radius: 20px;
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease, padding-inline 0.3s ease;
+  transition: width 0.3s ease, padding-inline 0.3s ease, background-color 1s ease;
 }
 
 .format-bar button:hover {
@@ -357,6 +357,7 @@ body {
   border-radius: 50%;
   border: 4px solid #ffffff3d;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease;
 }
 .info:hover {
   background-color: #ffffff14;
@@ -406,6 +407,7 @@ body {
 /* Code for the Settings Button */
 
 .settings-padding {
+  display: none;
   position: fixed;
   bottom: 180px;
   right: 20px;
@@ -415,7 +417,8 @@ body {
   border-radius: 30px;
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1002;
+  z-index: 1001;
+  animation: screenSaverUp2 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
 }
 .settings {
   width: 40px;
@@ -429,6 +432,7 @@ body {
   border-radius: 50%;
   border: 4px solid #ffffff3d;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease;
 }
 .settings:hover {
   background-color: #ffffff14;
@@ -558,7 +562,7 @@ body {
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 1001;
-  animation: screenSaverUp 1s cubic-bezier(0.25, 1.25, 0.5, 1);
+  animation: screenSaverUp 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
 }
 
 .dial-checkbox {
@@ -570,7 +574,7 @@ body {
   border-radius: 50%;
   position: relative;
   cursor: pointer;
-  transition: 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 
 .dial-checkbox:hover {
@@ -584,7 +588,7 @@ body {
   left: 50%;
   width: 4px;
   height: 14px;
-  background: #ffffff3d;
+  background: #ffffff88;
   border-radius: 3px;
   transform-origin: center bottom;
   transform: translate(-50%, -100%) rotate(-45deg);
@@ -593,7 +597,7 @@ body {
 
 .dial-checkbox:checked::before {
   transform: translate(-50%, -100%) rotate(45deg);
-  background: #ffffff88;
+  background: #ffffffcc;
 }
 
 /* Code for Screensaver Trigger Button ends here */

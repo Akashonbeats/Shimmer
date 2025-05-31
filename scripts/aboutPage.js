@@ -3,6 +3,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
   const formatBar = document.querySelector(".format-bar");
   const aboutPage = document.querySelector(".about-page");
   const screenSaver = document.querySelector(".screensaver");
+  const settingsButton = document.querySelector(".settings-padding");
 
   if (this.checked) {
     // Function to execute when checkbox is checked
@@ -12,6 +13,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
       formatBar.style.display = "none";
       aboutPage.style.display = "flex";
       screenSaver.style.display = "block";
+      settingsButton.style.display = "block";
 
       // Start the clock (Triggering this in the about page itself just to preload the data before the user enters screensaver mode)
       window.clockModule.start();
@@ -29,6 +31,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
     formatBar.style.display = "block";
     aboutPage.style.display = "none";
     screenSaver.style.display = "none";
+    settingsButton.style.display = "none";
 
     // Stop music updates
     if (window.musicModule) {

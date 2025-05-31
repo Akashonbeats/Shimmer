@@ -158,6 +158,15 @@
   }
 }
 
+@keyframes screenSaverUp2{
+  0% {
+    transform: translateY(160px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
 @keyframes slideUp2 {
   0% {
     opacity: 0;
