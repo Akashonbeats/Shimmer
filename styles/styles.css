@@ -403,6 +403,76 @@ body {
 
 /* Code for the Info Button ends here*/
 
+/* Code for the Settings Button */
+
+.settings-padding {
+  position: fixed;
+  bottom: 180px;
+  right: 20px;
+  padding: 10px;
+  background-color: #00000027;
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  border: 1px solid #ffffff27;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1002;
+}
+.settings {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: #00000027;
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  border: 4px solid #ffffff3d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.settings:hover {
+  background-color: #ffffff14;
+}
+.gear {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gear input {
+  display: none;
+}
+
+.gear svg {
+  height: 24px;
+  width: 24px;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gear-circle, .gear-path1, .gear-path2 {
+  fill: none;
+  stroke: #ffffff88;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+  transition: stroke 300ms ease-in-out;
+}
+
+.gear input:checked + svg {
+  transform: rotate(90deg);
+}
+
+.gear input:checked + svg .gear-circle,
+.gear input:checked + svg .gear-path1,
+.gear input:checked + svg .gear-path2 {
+  stroke: #ffffffcc;
+}
+
+/* Code for the Settings Button ends here*/
+
 /* Code for about page overlay */
 
 .about-page {
