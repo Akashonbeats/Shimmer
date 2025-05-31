@@ -4,6 +4,7 @@ document
     const appTitle = document.getElementById("appTitle");
     const appTagline = document.getElementById("appTagline");
     const websiteLink = document.getElementById("websiteLink");
+    const myName = document.getElementById("myName");
     const screensaverOverlay = document.querySelector(".screensaver-overlay");
 
     if (this.checked) {
@@ -13,6 +14,7 @@ document
         appTitle.style.display = "none";
         appTagline.style.display = "none";
         websiteLink.style.display = "none";
+        myName.style.display = "none";
         screensaverOverlay.style.display = "flex";
 
         // Go fullscreen
@@ -37,6 +39,7 @@ document
       appTitle.style.display = "block";
       appTagline.style.display = "block";
       websiteLink.style.display = "block";
+      myName.style.display = "block";
       screensaverOverlay.style.display = "none";
 
       // Disable fullscreen
