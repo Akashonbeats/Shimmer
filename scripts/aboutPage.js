@@ -3,7 +3,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
   const formatBar = document.querySelector(".format-bar");
   const aboutPage = document.querySelector(".about-page");
   const screenSaver = document.querySelector(".screensaver");
-  const settingsButton = document.querySelector(".settings-padding");
+  const settingsButton = document.querySelector(".settingsButton");
 
   if (this.checked) {
     // Function to execute when checkbox is checked
