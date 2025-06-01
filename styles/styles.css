@@ -13,7 +13,6 @@ body {
   font-style: italic;
   font-weight: 500;
   color: white;
-
 }
 
 .drag-bar {
@@ -145,7 +144,7 @@ body {
   position: relative;
   border-top: #adadad78 2px dashed;
   scrollbar-gutter: stable;
-  will-change: transform; 
+  will-change: transform;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
   cursor: text; /* Set cursor to text for the editable area */
@@ -192,13 +191,10 @@ body {
   width: 6px;
 }
 
-
-
 .notepad::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.343);
   border-radius: 10px;
 }
-
 
 /* Code for the Format Bar */
 
@@ -231,7 +227,8 @@ body {
   border-radius: 20px;
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease, padding-inline 0.3s ease, background-color 1s ease;
+  transition: width 0.3s ease, padding-inline 0.3s ease,
+    background-color 1s ease;
 }
 
 .format-bar button:hover {
@@ -331,21 +328,14 @@ body {
 
 /* Code for the Format Bar ends here*/
 
-.buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1002;
-  transition: all 0.8s ease;
-}
-
+/* Code for Buttons */
 /* Code for the Settings Button */
 
 .settingsButton {
   display: none;
+  position: fixed;
+  bottom: 160px;
+  right: 20px;
   padding: 10px;
   background-color: #00000027;
   backdrop-filter: blur(20px);
@@ -353,6 +343,7 @@ body {
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   animation: screenSaverUp 2.3s cubic-bezier(0.25, 1.25, 0.5, 1);
+  z-index: 1002;
 }
 .settings {
   width: 40px;
@@ -390,7 +381,9 @@ body {
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.gear-circle, .gear-path1, .gear-path2 {
+.gear-circle,
+.gear-path1,
+.gear-path2 {
   fill: none;
   stroke: #ffffff88;
   stroke-linecap: round;
@@ -413,8 +406,11 @@ body {
 
 /* Code for Screensaver Trigger Button */
 
-.screensaver{
+.screensaver {
   display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
   height: 62px; /*  IDK, This is important to make the button not look oval shaped, Don't remove or alter this Height property */
   padding: 10px;
   background-color: #00000027;
@@ -423,6 +419,7 @@ body {
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   animation: screenSaverUp 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
+  z-index: 1002;
 }
 
 .dial-checkbox {
@@ -465,12 +462,16 @@ body {
 /* Code for the Info Button */
 
 .infoButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   padding: 10px;
   background-color: #00000027;
   backdrop-filter: blur(20px);
   border-radius: 30px;
   border: 1px solid #ffffff27;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1002;
 }
 .info {
   width: 40px;
@@ -530,6 +531,7 @@ body {
 }
 
 /* Code for the Info Button ends here*/
+/* Code for Buttons ends here */
 
 /* Code for about page overlay */
 
@@ -544,7 +546,7 @@ body {
   height: 100vh;
   width: 100vw;
   padding-block: 5vh;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .about-page h1 {
@@ -554,7 +556,7 @@ body {
   font-size: 5rem;
   line-height: 1;
   animation: reveal 0.7s ease-in-out;
-  will-change: transform; 
+  will-change: transform;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
 }
@@ -565,7 +567,7 @@ body {
   color: rgba(255, 255, 255, 0.548);
   font-size: 0.9rem;
   animation: reveal 1.2s ease-in-out;
-  will-change: transform; 
+  will-change: transform;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
 }
@@ -630,7 +632,7 @@ body {
   z-index: 1000;
 }
 
-#time{
+#time {
   font-family: Heading Now I;
   font-weight: 100;
   font-style: normal;
@@ -638,24 +640,24 @@ body {
   font-size: 20vh;
   line-height: 1;
   animation: reveal2 0.6s ease-in-out;
-  will-change: transform; 
+  will-change: transform;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
 }
 
-#date{
+#date {
   font-family: Heading Now I;
   font-weight: 100;
   font-style: normal;
   color: rgba(255, 255, 255, 0.548);
   font-size: 5vh;
   animation: reveal2 1.1s ease-in-out;
-  will-change: transform; 
+  will-change: transform;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
 }
 
-#songInfo{
+#songInfo {
   display: none;
   margin-top: 70px;
   font-family: "Inter", sans-serif;
@@ -685,11 +687,11 @@ body {
 .bar:nth-child(2) {
   height: 3.2vh;
   margin: 0 5px;
-  animation-delay: .25s;
+  animation-delay: 0.25s;
 }
 
 .bar:nth-child(3) {
-  animation-delay: .5s;
+  animation-delay: 0.5s;
 }
 
 @keyframes scale-up4 {
@@ -703,7 +705,7 @@ body {
   }
 }
 
-#song{
+#song {
   font-style: italic;
   font-weight: 100;
   font-size: 2.3vh;
@@ -715,11 +717,11 @@ body {
   margin: 0;
 }
 
-#song span{
+#song span {
   color: rgba(255, 255, 255, 0.548);
 }
 
-#artist{
+#artist {
   font-weight: 100;
   font-size: 1.5vh;
   margin-top: 15px;
