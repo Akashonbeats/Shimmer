@@ -151,21 +151,21 @@
 
 @keyframes screenSaverUp{
   0% {
-    transform: translateY(80px) rotate(180deg);
+    transform: translateX(80px) rotate(180deg);
   }
   100% {
     transform: translateY(0) rotate(0deg);
   }
 }
 
-@keyframes screenSaverUp2{
+/* @keyframes screenSaverUp2{
   0% {
     transform: translateY(160px) rotate(180deg);
   }
   100% {
     transform: translateY(0) rotate(0deg);
   }
-}
+} */
 
 @keyframes slideUp2 {
   0% {

@@ -5,7 +5,9 @@ document
     const appTagline = document.getElementById("appTagline");
     const websiteLink = document.getElementById("websiteLink");
     const myName = document.getElementById("myName");
+    const settingsButton = document.querySelector(".settingsButton");
     const screensaverOverlay = document.querySelector(".screensaver-overlay");
+    const infoCheckBox = document.getElementById("infoCheckBox");
 
     if (this.checked) {
       // Function to execute when checkbox is checked
@@ -15,6 +17,7 @@ document
         appTagline.style.display = "none";
         websiteLink.style.display = "none";
         myName.style.display = "none";
+        settingsButton.style.display = "none";
         screensaverOverlay.style.display = "flex";
 
         // Go fullscreen
@@ -41,6 +44,11 @@ document
       websiteLink.style.display = "block";
       myName.style.display = "block";
       screensaverOverlay.style.display = "none";
+
+      // To only show settings button if info checkbox is checked
+      if (infoCheckBox.checked) {
+        settingsButton.style.display = "block";
+      }
 
       // Disable fullscreen
       if (document.exitFullscreen) {
