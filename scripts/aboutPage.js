@@ -41,9 +41,15 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
     // Stop the clock
     window.clockModule.stop();
 
+    // Master Cleanup of Settings and Screensaver panels when unchecked about page
     document.getElementById("screensaverCheckBox").checked = false;
     document
       .getElementById("screensaverCheckBox")
+      .dispatchEvent(new Event("change"));
+
+    document.getElementById("settingsCheckBox").checked = false;
+    document
+      .getElementById("settingsCheckBox")
       .dispatchEvent(new Event("change"));
   }
 });
