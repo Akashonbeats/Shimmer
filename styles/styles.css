@@ -331,79 +331,6 @@ body {
 
 /* Code for the Format Bar ends here*/
 
-/* Code for the Info Button */
-
-.infoButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px;
-  background-color: #00000027;
-  backdrop-filter: blur(20px);
-  border-radius: 30px;
-  border: 1px solid #ffffff27;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1002;
-}
-.info {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  background-color: #00000027;
-  backdrop-filter: blur(20px);
-  border-radius: 50%;
-  border: 4px solid #ffffff3d;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.4s ease;
-}
-.info:hover {
-  background-color: #ffffff14;
-}
-.hamburger {
-  cursor: pointer;
-  transform: translateY(3px);
-}
-
-.hamburger input {
-  display: none;
-}
-
-.hamburger svg {
-  /* The size of the SVG defines the overall size */
-  height: 20px;
-  /* Define the transition for transforming the SVG */
-  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line {
-  fill: none;
-  stroke: #ffffff88;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3;
-  /* Define the transition for transforming the Stroke */
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line-top-bottom {
-  stroke-dasharray: 12 63;
-}
-
-.hamburger input:checked + svg {
-  transform: rotate(-45deg);
-}
-
-.hamburger input:checked + svg .line-top-bottom {
-  stroke-dasharray: 20 300;
-  stroke-dashoffset: -32.42;
-}
-
-/* Code for the Info Button ends here*/
-
 /* Code for the Settings Button */
 
 .settingsButton {
@@ -476,6 +403,134 @@ body {
 }
 
 /* Code for the Settings Button ends here*/
+
+/* Code for Screensaver Trigger Button */
+
+.screensaver{
+  display: none;
+  position: fixed;
+  bottom: 95px;
+  right: 20px;
+  height: 62px; /*  IDK, This is important to make the button not look oval shaped, Don't remove or alter this Height property */
+  padding: 10px;
+  background-color: #00000027;
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  border: 1px solid #ffffff27;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  animation: screenSaverUp 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
+}
+
+.dial-checkbox {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background-color: #00000027;
+  border: 4px solid #ffffff3d;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.dial-checkbox:hover {
+  background-color: #ffffff14;
+}
+
+.dial-checkbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 14px;
+  background: #ffffff88;
+  border-radius: 3px;
+  transform-origin: center bottom;
+  transform: translate(-50%, -100%) rotate(-45deg);
+  transition: 0.4s ease;
+}
+
+.dial-checkbox:checked::before {
+  transform: translate(-50%, -100%) rotate(45deg);
+  background: #ffffffcc;
+}
+
+/* Code for Screensaver Trigger Button ends here */
+
+/* Code for the Info Button */
+
+.infoButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #00000027;
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  border: 1px solid #ffffff27;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1002;
+}
+.info {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: #00000027;
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  border: 4px solid #ffffff3d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease;
+}
+.info:hover {
+  background-color: #ffffff14;
+}
+.hamburger {
+  cursor: pointer;
+  transform: translateY(3px);
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 20px;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: #ffffff88;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* Code for the Info Button ends here*/
 
 /* Code for about page overlay */
 
@@ -559,61 +614,6 @@ body {
 /* Code for about page overlay ends here*/
 
 /* Code for Screensaver */
-
-/* Code for Screensaver Trigger Button */
-
-.screensaver{
-  display: none;
-  position: fixed;
-  bottom: 95px;
-  right: 20px;
-  height: 62px; /*  IDK, This is important to make the button not look oval shaped, Don't remove or alter this Height property */
-  padding: 10px;
-  background-color: #00000027;
-  backdrop-filter: blur(20px);
-  border-radius: 50%;
-  border: 1px solid #ffffff27;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
-  animation: screenSaverUp 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
-}
-
-.dial-checkbox {
-  appearance: none;
-  width: 40px;
-  height: 40px;
-  background-color: #00000027;
-  border: 4px solid #ffffff3d;
-  border-radius: 50%;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.4s ease;
-}
-
-.dial-checkbox:hover {
-  background-color: #ffffff14;
-}
-
-.dial-checkbox::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 4px;
-  height: 14px;
-  background: #ffffff88;
-  border-radius: 3px;
-  transform-origin: center bottom;
-  transform: translate(-50%, -100%) rotate(-45deg);
-  transition: 0.4s ease;
-}
-
-.dial-checkbox:checked::before {
-  transform: translate(-50%, -100%) rotate(45deg);
-  background: #ffffffcc;
-}
-
-/* Code for Screensaver Trigger Button ends here */
 
 .screensaver-overlay {
   font-weight: 100;
