@@ -421,7 +421,8 @@ body {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   animation: screenSaverUp 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
   z-index: 1002;
-  transition: right 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
+  transition: right 1.3s cubic-bezier(0.25, 1.25, 0.5, 1),
+    transform 1.3s cubic-bezier(0.25, 1.25, 0.5, 1);
 }
 
 .dial-checkbox {

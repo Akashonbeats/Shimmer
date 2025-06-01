@@ -24,7 +24,8 @@ document
       settingsButton.style.bottom = "90px";
 
       // Positioning the screensaver button
-      screenSaver.style.right = "-100px";
+      screenSaver.style.right = "-65px";
+      screenSaver.style.transform = "rotate(180deg)";
 
       // Clear any existing timeout
       if (screensaverTimeoutId) {
@@ -59,6 +60,7 @@ document
         screenSaver.style.display = "block";
       }
       screenSaver.style.right = "20px"; // Reset to original position
+      screenSaver.style.transform = "rotate(0deg)";
 
       // Positioning the settings button
       settingsButton.style.bottom = "160px";
