@@ -17,3 +17,8 @@
   font-family: "Inter", sans-serif; /* This is the font used for overall app */
   src: url("./fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Oooh Baby", cursive; /* This is the font used for the Settings Title */
+  src: url("./fonts/OoohBaby-Regular.ttf") format("truetype");
+}

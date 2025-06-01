@@ -10,6 +10,7 @@ document
     const myName = document.getElementById("myName");
     const settingsButton = document.querySelector(".settingsButton");
     const screenSaver = document.querySelector(".screensaver");
+    const settingsPage = document.querySelector(".settingsPage");
 
     if (this.checked) {
       console.log("Checkbox is checked");
@@ -19,6 +20,7 @@ document
       appTagline.style.display = "none";
       websiteLink.style.display = "none";
       myName.style.display = "none";
+      settingsPage.style.display = "block";
 
       // Positioning the settings button
       settingsButton.style.bottom = "90px";
@@ -54,6 +56,7 @@ document
       appTagline.style.display = "block";
       websiteLink.style.display = "block";
       myName.style.display = "block";
+      settingsPage.style.display = "none";
 
       // Make sure screensaver is visible and properly positioned
       if (infoCheckBox.checked) {

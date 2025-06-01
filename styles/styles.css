@@ -617,6 +617,32 @@ body {
 
 /* Code for about page overlay ends here*/
 
+/* Code for Settings Overlay */
+
+.settingsPage{
+  display: none;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-inline: 10vw;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1001;
+}
+
+.settingsTitle{
+  font-family: Heading Now Slim;
+  margin-top: 20vh;
+  font-size: 10vh;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.747);
+}
+
+/* Code for Settings Overlay ends here */
+
 /* Code for Screensaver */
 
 .screensaver-overlay {
