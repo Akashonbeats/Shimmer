@@ -1,4 +1,3 @@
-
 // Custom scrolling behavior with grab cursor
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,11 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const style = document.createElement('style');
   style.textContent = `
     .custom-scroll-handle {
-      position: absolute;
-      right: 27px;
-      top: 0;
+      position: fixed; /* changed from absolute */
       width: 8px;
-      height: 100%;
+      /* removed right:27px; */
       cursor: default;
       z-index: 100;
       opacity: 0;
@@ -84,6 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const rect = notepad.getBoundingClientRect();
     scrollHandle.style.top = `${rect.top}px`;
     scrollHandle.style.height = `${rect.height}px`;
+    // new: align handle to right edge of notepad
+    scrollHandle.style.left = `${rect.right - scrollHandle.offsetWidth}px`;
   }
   
   // Update handle position on resize
