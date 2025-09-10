@@ -1,7 +1,7 @@
 {
   "name": "shimmer",
   "productName": "Shimmer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Shimmer, A note-taking app built for design enthusiasts",
   "main": "main.js",
   "scripts": {
@@ -14,8 +14,8 @@
   "author": "Akash Sampath",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^25.2.0",
-    "electron-builder": "^23.6.0"
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
   },
   "build": {
     "afterPack": "build/afterPack.js",

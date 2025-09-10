@@ -135,6 +135,8 @@ if (!gotTheLock) {
       titleBarOverlay: {
         color: "rgba(0,0,0,0)", // Fully transparent background for the overlay
         symbolColor: "#ffffff88", // (Optional) Color for the button icons
+        height: 36, // Match native macOS titlebar height
+        transparent: true,
       },
       icon: path.join(
         __dirname,
