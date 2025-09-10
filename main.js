@@ -183,6 +183,16 @@ if (!gotTheLock) {
   async function ensureHapticCliBuilt() {
     if (!isMac) return null;
     if (hapticCliPath && fs.existsSync(hapticCliPath)) return hapticCliPath;
+    // Prefer packaged binary in Resources when available
+    const resourcesCandidate = path.join(
+      process.resourcesPath || "",
+      "HapticCli"
+    );
+    if (resourcesCandidate && fs.existsSync(resourcesCandidate)) {
+      hapticCliPath = resourcesCandidate;
+      return hapticCliPath;
+    }
+    // Dev fallback: compile from source into userData
     const src = path.join(__dirname, "native", "macos", "HapticCli.swift");
     const out = path.join(app.getPath("userData"), "HapticCli");
     // Verify toolchain exists

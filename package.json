@@ -18,6 +18,7 @@
     "electron-builder": "^23.6.0"
   },
   "build": {
+    "afterPack": "build/afterPack.js",
     "appId": "com.akashsampath.shimmer",
     "productName": "Shimmer",
     "asar": true,
