@@ -7,15 +7,6 @@
     ipcRenderer.invoke("haptic", kind).catch(() => {});
   }
 
-  // Simple throttle to avoid spawning too many helper processes
-  let lastAt = 0;
-  function hapticThrottled(payload, minInterval = 120) {
-    const now = Date.now();
-    if (now - lastAt < minInterval) return;
-    lastAt = now;
-    ipcRenderer.invoke("haptic", payload).catch(() => {});
-  }
-
   function bindHaptics() {
     const nodes = document.querySelectorAll(
       ".format-bar button, .dial-checkbox, .info"
@@ -23,14 +14,9 @@
     nodes.forEach((el) => {
       if (el.dataset.hapticsBound) return;
       el.dataset.hapticsBound = "1";
-      // Light tick on hover (throttled)
-      el.addEventListener("mouseenter", () =>
-        hapticThrottled("alignment", 200)
-      );
-      // Immediate press feedback; avoid double-firing by not also calling on click
-      el.addEventListener("mousedown", () =>
-        hapticThrottled({ pattern: "generic", count: 2, intervalMs: 25 }, 120)
-      );
+      el.addEventListener('mouseenter', () => haptic({ pattern: 'generic' }));
+      // el.addEventListener('mousedown', () => haptic({ pattern: 'levelChange', count: 1, intervalMs: 25, time: 'now' }));
+      el.addEventListener("click", () => haptic({ pattern: 'alignment' }));
     });
   }
 
