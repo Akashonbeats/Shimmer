@@ -15,6 +15,10 @@ document
         websiteLink.style.display = "none";
         screensaverOverlay.style.display = "flex";
 
+        // Start the clock and music only when screensaver is enabled
+        window.clockModule.start();
+        if (window.musicModule) window.musicModule.start();
+
         // Go fullscreen
         if (document.documentElement.requestFullscreen) {
           document.documentElement.requestFullscreen();
@@ -38,6 +42,10 @@ document
       appTagline.style.display = "block";
       websiteLink.style.display = "block";
       screensaverOverlay.style.display = "none";
+
+      // Stop the clock and music when screensaver exits
+      window.clockModule.stop();
+      if (window.musicModule) window.musicModule.stop();
 
       // Disable fullscreen
       if (document.exitFullscreen) {

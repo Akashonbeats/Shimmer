@@ -13,13 +13,7 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
       aboutPage.style.display = "flex";
       screenSaver.style.display = "block";
 
-      // Start the clock (Triggering this in the about page itself just to preload the data before the user enters screensaver mode)
-      window.clockModule.start();
-
-      // Start music updates (Triggering this in the about page itself just to preload the data before the user enters screensaver mode)
-      if (window.musicModule) {
-        window.musicModule.start();
-      }
+      // Do not start clock/music here; start only in screensaver mode to save power
     };
     enabled();
   } else {
@@ -30,12 +24,8 @@ document.getElementById("infoCheckBox").addEventListener("change", function () {
     aboutPage.style.display = "none";
     screenSaver.style.display = "none";
 
-    // Stop music updates
-    if (window.musicModule) {
-      window.musicModule.stop();
-    }
-
-    // Stop the clock
+    // Ensure polling is stopped when leaving about overlay
+    if (window.musicModule) window.musicModule.stop();
     window.clockModule.stop();
 
     document.getElementById("screensaverCheckBox").checked = false;
