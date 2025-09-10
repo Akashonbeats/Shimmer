@@ -177,7 +177,92 @@ if (!gotTheLock) {
   // Add this to reduce IPC overhead
   app.allowRendererProcessReuse = true;
 
-  app.whenReady().then(createWindow);
+  // macOS haptics via Swift CLI (no node-gyp)
+  const isMac = process.platform === "darwin";
+  let hapticCliPath = null;
+  async function ensureHapticCliBuilt() {
+    if (!isMac) return null;
+    if (hapticCliPath && fs.existsSync(hapticCliPath)) return hapticCliPath;
+    const src = path.join(__dirname, "native", "macos", "HapticCli.swift");
+    const out = path.join(app.getPath("userData"), "HapticCli");
+    // Verify toolchain exists
+    const hasXcrun = await new Promise((resolve) => {
+      exec("xcrun --version", (err) => resolve(!err));
+    });
+    if (!hasXcrun) {
+      console.error(
+        "Haptics: xcrun not found. Install Xcode Command Line Tools."
+      );
+      return null;
+    }
+    // Compile
+    await new Promise((resolve) => {
+      exec(`xcrun swiftc "${src}" -o "${out}"`, (err, stdout, stderr) => {
+        if (err) {
+          console.error("Haptics compile error:", err?.message || err);
+          if (stderr) console.error(stderr);
+        }
+        resolve();
+      });
+    });
+    if (!fs.existsSync(out)) {
+      console.error("Haptics: compiled binary not found:", out);
+      return null;
+    }
+    hapticCliPath = out;
+    return out;
+  }
+
+  ipcMain.handle("haptic", async (_event, payload = "click") => {
+    if (!isMac) return false;
+    const cli = await ensureHapticCliBuilt();
+    if (!cli) return false;
+    // Accept either a string (legacy) or an options object
+    let pattern = "generic",
+      count = 1,
+      intervalMs = 30,
+      time = "now";
+    if (typeof payload === "string") {
+      pattern =
+        payload === "alignment" || payload === "hover"
+          ? "alignment"
+          : payload === "level" || payload === "levelChange"
+          ? "levelChange"
+          : "generic";
+    } else if (payload && typeof payload === "object") {
+      const p = payload.pattern || payload.kind || "generic";
+      pattern =
+        p === "alignment" || p === "hover"
+          ? "alignment"
+          : p === "level" || p === "levelChange"
+          ? "levelChange"
+          : "generic";
+      if (Number.isInteger(payload.count)) count = payload.count;
+      if (Number.isInteger(payload.intervalMs)) intervalMs = payload.intervalMs;
+      if (typeof payload.time === "string") time = payload.time;
+    }
+    await new Promise((resolve) => {
+      exec(
+        `"${cli}" ${pattern} ${count} ${intervalMs} ${time}`,
+        (err, _stdout, stderr) => {
+          if (err) console.error("Haptics run error:", err?.message || err);
+          if (stderr) console.error(stderr);
+          resolve();
+        }
+      );
+    });
+    return true;
+  });
+
+  app.whenReady().then(async () => {
+    if (process.platform === "darwin") {
+      // Kick off haptics helper build at startup
+      ensureHapticCliBuilt().catch((err) =>
+        console.error("Haptics build at startup failed:", err?.message || err)
+      );
+    }
+    createWindow();
+  });
 
   app.on("window-all-closed", () => {
     if (process.platform !== "darwin") app.quit();
