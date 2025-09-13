@@ -1,3 +1,5 @@
+<img width="150" height="150" alt="AppIcon-macOS-Default-1024x1024@1x" src="https://github.com/user-attachments/assets/63a6698e-1205-48ff-bc8d-7aba3e014f6a" />
+
 # Shimmer
 
 Shimmer - a Notepad Reimagined for Design Enthusiasts.
