@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const os = require("os");
 const { exec } = require("child_process");
 const fs = require("fs");
@@ -122,6 +122,11 @@ if (!gotTheLock) {
 
   //End of code for music playback status on macOS
 
+  // Helper to detect external http(s) URLs
+  function isHttpUrl(url) {
+    return /^https?:\/\//i.test(url);
+  }
+
   function createWindow() {
     const isWindows = process.platform === "win32";
     const win = new BrowserWindow({
@@ -154,6 +159,23 @@ if (!gotTheLock) {
     });
 
     win.loadFile(path.join(__dirname, "index.html"));
+
+    // Standard pattern: open any http/https navigation in default browser
+    win.webContents.setWindowOpenHandler(({ url }) => {
+      if (isHttpUrl(url)) {
+        shell.openExternal(url);
+        return { action: "deny" };
+      }
+      return { action: "allow" };
+    });
+
+    win.webContents.on("will-navigate", (event, url) => {
+      if (isHttpUrl(url) && url !== win.webContents.getURL()) {
+        event.preventDefault();
+        shell.openExternal(url);
+      }
+    });
+
     win.once("ready-to-show", () => {
       // Set zoom to 90% on Windows
       if (process.platform === "win32") {
