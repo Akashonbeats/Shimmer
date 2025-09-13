@@ -37,6 +37,16 @@
       "!**/{appveyor.yml,.travis.yml,circle.yml}",
       "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
     ],
+    "extraFiles": [
+      {
+        "from": "build/mac/Assets.car",
+        "to": "Resources/Assets.car"
+      },
+      {
+        "from": "build/mac/Shimmer.icns",
+        "to": "Resources/Shimmer.icns"
+      }
+    ],
     "compression": "maximum",
     "mac": {
       "category": "public.app-category.productivity",
@@ -49,11 +59,13 @@
           ]
         }
       ],
-      "icon": "Shimmer.icns",
+      "icon": "build/mac/Shimmer.icns",
       "extendInfo": {
         "CFBundleSupportedPlatforms": [
           "MacOSX"
-        ]
+        ],
+        "CFBundleIconName": "Shimmer",
+        "CFBundleIconFile": "Shimmer"
       },
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
